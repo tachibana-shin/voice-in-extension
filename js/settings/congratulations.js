@@ -1,0 +1,1 @@
+$(".close").click((()=>{$(".trailer").removeClass("active"),$("#video").attr("src","")})),$(".clickVideo").click((()=>{$("#video").attr("src","https://www.youtube.com/embed/ykwDbN6twdg"),$(".trailer").addClass("active")}));

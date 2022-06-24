@@ -1,0 +1,440 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8"/>
+    <title>Voice In - Settings</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/options.css">
+    <style>
+.page-title {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.page-lead {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+#cmds {
+  margin-bottom: 100px;
+}
+
+.btn-bd-download {
+  font-weight: 600;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.disabled .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    opacity: .65;
+}
+
+.needspro, .golden {
+  color: #e0a800;
+  border-color: #ffc107;
+}
+
+small {
+  font-size: 14px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.voicein_ks {
+  padding: 5px 15px;
+  background: #828282;
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.voicein_ks_s {
+  display: inline-block;
+  width: max-content;
+}
+
+.settings>h3 {
+  padding-top: 80px; margin-top: -80px;
+}
+
+    </style>
+</head>
+
+<body>
+<header class="navbar  fixed-top navbar-expand bg-light flex-column flex-md-row bd-navbar">
+  <a class="navbar-brand" href="/settings.html">
+    <img src="images/icon144.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Voice In
+  </a>
+
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item active">
+        <a class="nav-link" href="/settings.html">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://dictanote.co/voicein/getting-started/" target='_blank'>Getting Started</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/activateplus.html">Activate Plus</a>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    <a class="btn btn-warning d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 voicein-upgrade"  target="_blank" href="https://dictanote.co/voicein/plus/">
+      <i class='fa fa-bolt'></i> Upgrade To Voice In Plus
+    </a>
+  </ul>
+</header>
+
+<div class='container-fluid'>
+  <div class='row flex-xl-nowrap'>
+    <div class='col-md-3 col-xl-2 bd-sidebar'>
+      <div class='position-fixed'>
+        <nav class="navbar navbar-light bg-light flex-column" style='margin-top: 30px;'>
+          <nav class="nav nav-pills flex-column">
+            <span class="navbar-brand mb-2" style='padding: .5rem 1rem;font-weight: 500;'>Voice In Settings</span>
+            <a class="nav-link mb-1" href="#dictation-settings">Dictation Settings</a>
+            <a class="nav-link mb-1" href="#ui-settings">UI Settings</a>
+            <a class="nav-link mb-1" href="#voice-commands">Voice Commands</a>
+            <a class="nav-link mb-1" href="#text-transforms">Dictation Text Transforms</a>
+            <a class="nav-link mb-1" href="#keyboard-shortcuts">Keyboard Shortcuts</a>
+            <a class="nav-link mb-1" href="#voicein-plus">Voice In Plus</a>
+            <a class="nav-link mb-1" href="#support">Support</a>
+            <a class="nav-link mb-1" href="#share-voicein">Share Voice In</a>
+          </nav>
+        </nav>
+        <div style='color:#4285F4; font-size:14px; text-align: center; margin-top: 10px;'><b>
+          ❤️ Voice In?</b> Please rate us<br> at <a href='' target='_blank' style='text-decoration: underline; color:#4285F4;'>Chrome Web Store</a></div>
+      </div>
+    </div>
+    <div class='col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content'>
+      <!-- <div style="text-align: center;">
+        <div id="logo" style="vertical-align: top;">
+        <img style='width:60px; height: 60px;' src="images/icon144.png"></div>
+        <div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
+          <h1 class="cool-style" id='title' style="margin-bottom: 7px;">Voice In Settings</h1>
+        </div>
+      </div> -->
+  
+      <section class='settings'>
+        <h3 id='dictation-settings' class='anchor'>Dictation Settings</h3>
+        <div id="permissions-container">
+          <p>Please grant microphone permissions, so you can start dictating.</p>
+          <button class='btn btn-success' id="invoke_permission" style='display: flex'>Allow microphone access</button>
+          <p style='color: red' id='microphone-error'></p>
+          <br>
+        </div>
+  
+        <div id="language_container">
+          <p>Select your dictation language</p>
+          <select class='form-control' id="select_language" style='max-width: 400px;'></select>
+          <br>
+        </div>
+  
+        <div>
+          <p>
+            <input id='tab-change-ok' type='checkbox' disabled> &nbsp;Dictate Across Multiple Tabs Seamlessly 
+            <a class='needspro' href='#voiceinplus'>🔒 <small>(only for plus users)</small></a>
+          </p>
+          <p>By default, when you change tabs, dictation stops and you need to start Voice In manually again. 
+            Enabling this feature allows you to change tabs without having to worry about dictation stopping. 
+          </p>
+        </div>
+      </section>
+  
+      <section class='settings'>
+        <div class='row'>
+          <div class='col-9'>
+            <h3 id='ui-settings' class='anchor'>UI Settings </h3>
+            <p><input id='voicein-popup-checkbox' type='checkbox' disabled> &nbsp;Hide Voice In pop-up<br></p>
+            <p>Change location on the page where Voice In pop-up shows up: <a class='needspro' href='#voiceinplus'>🔒 <small>(only for plus users)</small></a></p>
+            <select class='form-control' id="voicein-popup-location" style='width: max-content' disabled>
+              <option value='0'>Top Right</option>      
+              <option value='1'>Bottom Right</option>      
+              <option value='2'>Bottom Left</option> 
+              <option value='3'>Top Left</option>      
+            </select>
+          </div>
+          <div class='col-3'>
+            <img src='images/changelocation.png'  style='max-height:150px;' />
+          </div>
+        </div>
+      </section>
+  
+      <section class='settings'>
+        <h3 id='voice-commands' class='anchor'>Voice Commands</h3>
+        <p>
+          A voice command maps a phrase to a predefined block of text or an action. Think of voice commands as shortcuts to help you do your everyday tasks more efficiently. 
+          For example, the voice command 'insert name' → 'John Snow' means that when you dictate <i>insert name</i>, <i>John Snow</i> will be inserted.</p>
+  
+        <h4>Built-In Commands</h4>
+        <p>Voice In comes with a built-in list of voice commands for punctuation marks, line breaks, common actions, etc. 
+          <a href='https://dictanote.co/voicein/voicecommands/' target='_blank'>Check-out the full list here</a>.</p>
+  
+        <div id='custom-commands'>
+          <h4>Custom Commands <a class='needspro' href='#voiceinplus'>🔒 <small>(only for plus users)</small></a></h4>
+          <p>Use custom voice commands to correct dictation errors and automate repetitive text entry.. <br>
+            <a href='https://support.dictanote.co/hc/en-us/articles/360040450691-Using-Custom-Voice-Commands-in-Voice-In' target='_blank'>
+              Learn more about how to use custom voice commands here</a>.
+          </p>
+          <div style='margin-bottom: 25px;'>
+            <table class="table table-sm" style="max-width: 800px">
+              <thead>
+                <tr>
+                  <th style='width: 25%;!important'>Say This</th>
+                  <th style='width: 65%;!important'>To Insert This</th>
+                  <th style='width: 5%;!important'></th>
+                  <th style='width: 5%;!important'></th>
+                </tr>
+              </thead>
+              <tbody id='custom-vc' style='white-space: pre;'>
+              </tbody>
+            </table>
+            <button type="button" class="btn btn-success btn-sm disabled" data-toggle="modal" id='addNewVCBtn' data-target="#addNewVC">
+              Add New Command
+            </button>
+            <button type="button" class="btn btn-success btn-sm disabled" data-toggle="modal" id='addBulkVCBtn' data-target="#addBulkVC">
+              Bulk Add Commands
+            </button>
+            <button type="button" class="btn btn-success btn-sm disabled" data-toggle="modal" id='exportVCBtn' data-target="#exportVC">
+              Export Commands
+            </button>
+          </div>
+          <p>To edit an existing voice command, simply delete it by clicking on <i class='fa fa-trash'></i> icon for that voice command. Then add it again.</p>
+          <p>You can <i>Export Commands</i> to create a backup of your voice commands in CSV format. 
+            A backup of your custom voice commands can also be found <a href='https://dictanote.co/voicein/commands/view/' target='_blank'>here</a>. Currently, voice commands don't sync across your machines. If you are on a new machine or if you reinstall the chrome extension, you may have to manually initialize the voice commands. We are working on automating this process.            
+          </p>
+        </div>
+      </section>
+      <section class='settings'>
+        <h3 id='text-transforms' class='anchor'>Dictation Text Transforms <a class='needspro' href='#voiceinplus'>🔒 <small>(only for plus users)</small></a></h3>
+ 
+        <p>Use text transforms below to transform dictated text.</p>
+
+        <p style='margin-top: 20px;'>
+          <div>
+            <h4>Change Case</h4>
+            <p>Change the capitalization or case of dictated text.</p>
+            <select class='form-control' id='change-case' style='max-width: 400px;' disabled>
+              <option value='df'>Default</option>
+              <option value='sc'>Sentence case</option>
+              <option value='lc'>lowercase</option>
+              <option value='uc'>UPPERCASE</option>
+              <option value='ce'>Capitalize Each Word</option>
+            </select>
+            <br>
+          </div>
+          <!--<div style='margin-bottom:5px;'>
+             <input id="voicein-uppercase-checkbox" type="checkbox" disabled=""> &nbsp;Lowercase except at the start of a sentence<br>
+            <small>Your dictated text will be typed in lowercase only (except for the beginning of a sentence which is auto-capitalized).</small>
+            <input id="voicein-disablecap-checkbox" type="checkbox" disabled=""> &nbsp;Disable capitalization<br>
+            <small>Enabling this disables capitalization. Use in conjunction with the above to get only lowercase text.</small>
+          </div>-->
+          <div>
+            <input id="voicein-diacritics-checkbox" type="checkbox" disabled=""> &nbsp;Disable <a href='https://en.wikipedia.org/wiki/Diacritic' target='_blank'>Diacritics</a> In Dictation
+          </div>
+        </p>
+      </section>
+  
+      <section class='settings'>
+        <h3 id='keyboard-shortcuts' class='anchor'>Keyboard Shortcuts</h3>
+        <div class="">
+          <h4>Start / Stop Voice In</h4>
+          <div class='voicein_ks' id='voicein_current_ks'></div>
+          <p>You can use the keyboard shortcut to start/stop dictation<br>
+          Go to URL chrome://extensions/shortcuts (copy paste the URL into a new tab) to change the shortcut</p>
+        </div>
+        <div class=''>
+          <h4>Language Switcher <a class='needspro' href='#voiceinplus'>🔒 <small>(only for plus users)</small></a></h4>
+          <p>You can use keyboard shortcuts or pop-up options to switch languages quickly.<br>
+          Go to URL chrome://extensions/shortcuts to set/change the shortcuts.</p>
+          <p><span class='voicein_ks' id='voicein_lang1_ks'></span> <select disabled class='form-control voicein_ks_s' id="select_lang1_ks"></select></p>
+          <p><span class='voicein_ks' id='voicein_lang2_ks'></span> <select disabled class='form-control voicein_ks_s' id="select_lang2_ks"></select></p>
+          <p><span class='voicein_ks' id='voicein_lang3_ks'></span> <select disabled class='form-control voicein_ks_s' id="select_lang3_ks"></select></p>
+          <p style='margin-top: 20px;'>
+            <input id="voicein-ls-checkbox" type="checkbox" disabled=""> &nbsp;Show language switching options in the page pop-up<br>
+          </p>
+        </div>
+      </section>
+  
+      <section class='settings' id='voiceinplus'>
+        <h3 id='voicein-plus' class='golden'><i class='fa fa-bolt'></i> Voice In Plus</h3>
+        <p>Upgrade to Voice In Plus to unlock all the features of Voice In. <a href='https://dictanote.co/voicein/plus/' target="_blank">Read more about Voice In Plus</a></p>
+        <a class="upgrade-button simple-style btn btn-warning" href="https://dictanote.co/voicein/plus/" target="_blank">Upgrade Now</a>
+      </section>
+  
+      <section class='settings'>
+        <h3 id='support'>Support</h3>
+        <p>If you have any questions, check out the help pages in the <a href='https://support.dictanote.co/hc/en-us/sections/360006696291-Voice-In' target='_blank'>help center</a><br> or contact us via email at <a href='mailto:support@dictanote.co'>support@dictanote.co</a></p>
+      </section>
+  
+      <section class='settings'>
+        <h3 id='share-voicein'>Spread the word</h3>
+        <p>Please help us spread the word about Voice In by letting your friends know about this unique extension</p>
+  
+        <a class="btn btn-info btn-sm" href="https://twitter.com/intent/tweet?text=I have started using Voice In, a chrome extension that lets you type with your voice. Check it out ! &amp;url=https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko" target="_blank"><i class='fa fa-twitter'></i> Tweet</a>
+        <a class="btn btn-primary btn-sm" style="margin-left:10px;" href="https://www.facebook.com/sharer/sharer.php?u=https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko" target="_blank"><i class='fa fa-facebook'></i> &nbsp;Share on Facebook</a>
+        <a class="btn btn-danger btn-sm" style="margin-left:10px;" href="mailto:?subject=Try Dictanote&amp;body=Hi,%0D%0A%0D%0A I've been using a new chrome extension which I think you will like.%0D%0A%0D%0A It's called Voice In. It lets you type on websites using your voice.%0D%0A%0D%0A Download it from:%0D%0Ahttps://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko" target="_self"><i class='fa fa-envelope'></i> Send Email</a><br>
+      </section>
+    </div>
+  </div>  
+</div>
+
+<br><br>
+
+    <footer class="multiline-footer" style="margin-bottom: 0px;">
+      <div class="container">
+        <div class="row mainnavigation-row">
+          <div class="col-md-12 text-center">
+            <ul>
+              <li><a href="https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko/reviews" target="_blank">Rate Voice In</a></li>
+              <li><a href="https://support.dictanote.co/hc/en-us/sections/360006696291-Voice-In">Help Center</a></li>
+              <li><a href="https://dictanote.co/terms/">Terms</a></li>
+              <li><a href="https://dictanote.co/privacy/">Privacy</a></li>
+              <li><a href="https://dictanote.co/voicein/">Go To Voice In Website</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row socials-row">
+          <div class="col-md-12 col-sm-12 text-center">
+            <ul class="share-buttons socials">
+              <li><a href="https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko" target="_blank"><i class="fa fa-chrome"></i></a></li>
+              <li><a href="https://www.facebook.com/DictanoteApp/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="mailto:support@dictanote.co"><i class="fa fa-envelope-o"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row copyright-row"><div class="col-md-12 col-sm-12 text-center"><span class="copyright">© 2021 Dictanote</span></div></div>
+      </div>
+    </footer>
+<div class="modal fade" id="addNewVC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Voice Command</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class='disabled' id='custom-cmds'>
+          <div class='form-group'>
+            <label for="sayThis">Say This</label>
+            <input id='sayThis' placeholder='Command' class='form-control form-control-sm' style='width: 400px' style='border-radius:0' />
+          </div>
+          <div class='form-group'>
+            <label for="sayThis">To Insert This</label>
+            <textarea id='toInsertThis' rows=1 placeholder='Output' style='width: 400px' class='form-control form-control-sm' style='border-radius:0'></textarea>
+          </div>
+          <div class='form-check'>
+            <input type="checkbox" class="form-check-input " id="partial-match">
+            <label class="form-check-label col-form-label-sm">Match within a word</label>
+          </div>
+<!--           <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="matchWord">
+            <label class="form-check-label" for="matchWord">
+              Match entire command
+            </label>
+          </div> -->
+          <div class='form-group' style='margin-top: 10px;'>
+            <button id='add-new-vc' href="#" class="btn btn-success btn-sm" style='border-radius:0'>Add new command</button>
+          </div>
+          <div class='form-group' id='vc-error-box' style='display: none; color:red;'>
+            &nbsp;&nbsp; <strong>Ouch!</strong> <span id='vc-error'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addBulkVC" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Bulk Add Voice Commands</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Enter voice commands one per line in the textbox like <br>
+          <code>command1,output1<br>
+          command2,output2</code></p>
+        <p>
+          <textarea id='vcTextArea' cols=50, rows=10></textarea>
+<!--           <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="matchWord">
+            <label class="form-check-label" for="matchWord">
+              Match entire command
+            </label>
+          </div> -->
+          <div class='form-group' style='margin-top: 10px;'>
+            <button id='bulk-add-vc' href="#" class="btn btn-success btn-sm" style='border-radius:0'>Add  Commands</button>
+          </div>
+          <div class='form-group' id='vc-error-box' style='display: none; color:red;'>
+            &nbsp;&nbsp; <strong>Ouch!</strong> <span id='bulk-vc-error'></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exportVC" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Export Voice Commands</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Below is the exported list of your voice commands
+        <p>
+          <textarea id='vcExportArea' cols=50, rows=10></textarea>
+<!--           <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="matchWord">
+            <label class="form-check-label" for="matchWord">
+              Match entire command
+            </label>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="js/settings/jquery-3.1.1.min.js"></script>
+    <script src="js/settings/bootstrap.bundle.min.js"></script>
+    <script src='js/settings/ga.js'></script>
+    <script src='js/settings/langs.js'></script>
+    <script src="js/settings/settings.js"></script>
+    <script src="js/settings/common.js"></script>
+    <script src="js/settings/voicecommands.js"></script>
+    <script src="js/settings/lang-shortcuts.js"></script>
+  </body>
+</html>

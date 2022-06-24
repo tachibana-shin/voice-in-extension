@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
+  <title>Setup Successful - Voice In</title>
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/options.css">
+  <style>
+    .dismissCard {
+      position: fixed;
+      top: 23px;
+      right: 15px;
+      width: 351px;
+      padding: 24px;
+      background-color: #2b2d36;
+      border-radius: 8px;
+      z-index: 2147483647;
+      margin: 0;
+      color: #fff
+    }
+  
+    .dismissCard:before {
+      content: "";
+      position: fixed;
+      top: 16px;
+      right: 75px;
+      transform: rotate(45deg);
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+      background-color: inherit;
+    }
+
+    .dismiss:hover {
+      background-color: #454754 !important;
+    }
+
+    .helper a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    h1 {
+      color: #555;
+      font-family: Source Sans Pro, sans-serif;
+      font-size: 2.7rem;
+      font-weight: bold;
+    }
+
+    h1,
+    h2,
+    h5 {
+      margin: 0;
+      padding: 0;
+      color: #555;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .divider {
+      border-bottom: 6px dotted #ff8282;
+      margin: 0 auto;
+      width: 20%;
+    }
+
+
+    .welcome-module {
+      animation: moveupdown 1.3s linear infinite;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 1rem 1rem 0rem 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+      width: 20rem;
+      z-index: 1;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      transition: visibility 1s ease-in;
+      display: inline;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    .helper {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 0 0 0;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem;
+      margin-bottom: 2rem !important;
+    }
+
+    .content {
+      margin-top: 50px;
+      cursor: pointer;
+    }
+
+    .contents:hover {
+      transform: scale(1.05);
+    }
+
+    .trailer {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.95);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .trailer.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      cursor: pointer;
+      max-width: 32px;
+      filter: invert(1);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar fixed-top navbar-expand bg-light flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand" href="/settings.html">
+      <img src="images/icon144.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Voice In
+    </a>
+  
+    <div class="navbar-nav-scroll">
+      <ul class="navbar-nav bd-navbar-nav flex-row">
+        <li class="nav-item">
+          <a class="nav-link" href="/settings.html">Settings</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://dictanote.co/voicein/getting-started/" target='_blank'>Getting Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/activateplus.html">Activate Plus</a>
+        </li>
+      </ul>
+    </div>
+  
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+    <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3 gold-color gold-color-border voicein-upgrade" target="_blank" href="https://dictanote.co/voicein/plus/"><i class='fa fa-bolt'></i> Upgrade</a>
+  </header>
+  
+  <div id="center_screen">
+    <div style="text-align: center;">
+      <div id="logo" style="vertical-align: top;">
+        <img src="images/icon144.png">
+      </div>
+      <div style="display: inline-block; vertical-align: middle; margin-left: 10px;">
+        <h1 class="cool-style" id='title' style="margin-bottom: 7px;">Voice In</h1>
+        <a href="https://dictanote.co/voicein/" target="_blank">
+          <h3 class="cool-style">By Dictanote</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="welcome-module">
+        <div class="row">
+            <div class="col-lg-2">
+                <span role="img" style="font-size:2rem;"aria-label="point up">👆</span>
+            </div>
+            <div class="col-lg-10">
+                <p>Click the <img src="images/ic_mic_black_36dp.png" width="14" height="14" /> icon in the toolbar to get started with VoiceIn.</p>
+            </div>
+        </div>
+    </div> -->
+  <div class="main d-flex align-items-center">
+    <h1 id='title-message' style='font-weight:400'>Setup Successful &#127881;</h1><br>
+    <h1>Let's Get You Started</h1>
+    <p></p><p></p>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-lg-12'>
+
+<div class='row' style='padding-bottom: 20px;'>
+  <div class='col-6'>
+    <div style='margin-top:20px; display:flex; align-items: center'><img src="images/step1.png" style="height:80px;" /> 
+      <h2>Pin It</h2></div>
+      <p>Click the 
+        <svg viewBox="0 0 24 24" style="width:15px;display:inline;" fill="none">
+          <path d="M20 11.5h-1.5v-4c0-1.1-.9-2-2-2h-4V4a2.5 2.5 0 00-5 0v1.5h-4c-1.1 0-1.99.9-1.99 2v3.8H3c1.49 0 2.7 1.21 2.7 2.7 0 1.49-1.21 2.7-2.7 2.7H1.5v3.8c0 1.1.9 2 2 2h3.8V21c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7v1.5h3.8c1.1 0 2-.9 2-2v-4H20a2.5 2.5 0 000-5z" fill="currentColor"></path>
+        </svg> in the address bar and pin Voice In for easy access. This will add the Voice In launch button with a microphone icon to the address bar.
+      </p>
+  </div>
+  <div class='col-6'>
+    <figure style='width: fit-content; border: 1px solid #efefef'>
+      <video autoplay loop muted style='max-width:300px;'>
+        <source src="/images/pinVoiceIn.mp4" type="video/mp4">
+      </video>
+      <figcaption style='background: #efefef; text-align:center'>Pin Voice In to the address bar</figcaption>
+    </figure>
+  </div>  
+</div>
+<div class='row'>
+  <div class='col-6'>
+    <div style='display:flex; align-items: center'><img src="images/step2.png" style="height:80px;" /> <h2>Try It</h2></div>
+    <p>Open the <a href='https://dictanote.co/voicein/test/' target='_blank'>Voice In Test Pad <i class='fa fa-external-link'></i></a></p>
+    
+    <p>To dictate, place the cursor in the text area. Then use one of three ways to start/stop voice recognition:</p>
+
+    <p><img src='/images/ic_mic_black_36dp.png' style='height:18px;'> <b>Button</b><br> Click on the Voice In button in the address bar to start/stop recognition. When you start dictating, the microphone button in the address bar will turn red. To stop dictation, click on the button again. The button will turn black once recognition stops.</p>
+    <p><img src='/images/mouse-right-click.png' style='height:18px;'> <b>Right Click</b><br> Place the cursor in the text box, right-click on the mouse, and then, in the drop-down menu click "Start Recording". To stop, you can right click and select "Stop Recording". </p>
+
+    <p><i class='fa fa-keyboard-o'></i> <b>Keyboard Shortcut</b><br> You can also use the keyboard shortcut <code id='keyboard-shortcut'>CTRL+SHIFT+9 </code> to start/stop voice recognition.
+    </p>
+
+    <p> When you start dictation, the Voice In language button shows up on the page. It shows the current dictation language. 
+    Clicking on it opens up a pop-up in which you can change the current language. </p>
+  </div>
+  <div class='col-6'>
+    <figure style='width: fit-content; border: 1px solid #efefef'>
+      <video autoplay loop muted style='max-width:450px;'>
+        <source src="/images/demo1.mp4" type="video/mp4">
+      </video>
+      <figcaption style='background: #efefef; text-align:center'>Using address bar button to start Voice In</figcaption>
+    </figure>
+    <figure style='width: fit-content; border: 1px solid #efefef'>
+      <video autoplay loop muted style='max-width:450px;'>
+        <source src="/images/demo2.mp4" type="video/mp4">
+      </video>
+      <figcaption style='background: #efefef; text-align:center'>Using right click to start Voice In</figcaption>
+    </figure>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-6'>
+    <div style='margin-top:40px; display:flex; align-items: center'>
+      <img src="images/step3.png" style="height:80px;" /> <h2>Use It</h2>
+    </div>
+    <p>Now you are ready to use Voice In on your favourite websites like Gmail, Office 365, Ebay, Wordpress, Zendesk, Salesforce, etc. <br>
+    Voice In works on most sites with simple textbox / input box. You can find the list of sites we have tested Voice In to work on <a href='https://support.dictanote.co/hc/en-us/articles/360033920231' target='_blank'>here</a>.
+    </p>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<!--   <div class="row" style='justify-content:center;'>
+      <div class="col-lg-12">
+        <a href="https://dictanote.co/voicein/getting-started/" target="_blank" style='display:flex; align-items:flex-start'>
+          <img src="images/getting-started-icon.png" style="height:110px;" />
+          <div style='flex-direction: column; color:#555'>
+            <h3>New User ? Checkout the 2-minute Getting Started guide</h3>
+            <p style="margin-top:10px;font-size:1.4rem;opacity:.8;">A step-by-step guide that will get you more comfortable with Voice In.
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+-->
+<!--    
+      <p style="font-size:1.4rem;opacity:.8;text-align:center"><br>
+      New User ? Make sure to read the 2-minute <a href='https://dictanote.co/voicein/getting-started/' target='_blank'>Getting Started Guide</a>.<br><br>
+      Try Voice In now on the <a href='https://dictanote.co/voicein/test/' target='_blank'>Voice In Testpad</a> or <a href='https://mail.google.com/' target='_blank'>Gmail</a>.<br><br>
+      Go to <a href='chrome-extension://pjnefijmagpdjfhhkpljicbbpicelgko/settings.html' target='_blank'>Voice In Options</a> page to configure settings like voice commands.</p>
+ --><br><br>
+  </div>
+  <div class="divider"></div>
+  <div class="helper align-items-center">
+    <h2 style="font-weight:bold;">Need more help getting started?</h2>
+    <div class="row content">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-3 text-center contents">
+        <div class="clickVideo">
+          <img src="images/play-icon.png" style="height:110px;" />
+          <h5>Overview Video</h5>
+          <p style="margin-top:10px;">A 2-minute video demonstrating the basics of using VoiceIn</p>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center contents">
+        <a href="https://support.dictanote.co/hc/en-us/sections/360006696291-Voice-In" target="_blank">
+          <img src="images/getting-started-icon.png" style="height:110px;" />
+          <h5>Visit the Help Center</h5>
+          <p style="margin-top:10px;">Checkout all the help articles for Voice In
+          </p>
+        </a>
+      </div>
+      <div class="col-lg-3 text-center contents">
+        <a href="https://dictanote.co/voicein/plus/" target="_blank">
+          <img src="images/upgrade.png" style="height:110px;" />
+          <h5>Upgrade to Voice In Plus</h5>
+          <p style="margin-top:10px;">Unlock all features when you upgrade to Plus.</p>
+        </a>
+      </div>
+    </div>
+    <div class="trailer">
+      <iframe id="video" width="853" height="480" src="https://www.youtube.com/embed/ykwDbN6twdg" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <img src="images/close.png" class="close">
+    </div>
+  </div>
+
+  <footer class="multiline-footer" style="margin-bottom: 0px;">
+    <div class="container">
+      <div class="row mainnavigation-row">
+        <div class="col-md-12 text-center">
+          <ul>
+            <li><a
+                href="https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko/reviews"
+                target="_blank">Rate Voice In</a></li>
+            <li><a href="https://support.dictanote.co/hc/en-us/sections/360006696291-Voice-In">Help
+                Center</a></li>
+            <li><a href="https://dictanote.co/terms/">Terms</a></li>
+            <li><a href="https://dictanote.co/privacy/">Privacy</a></li>
+            <li><a href="https://dictanote.co/">Go To Dictanote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row socials-row">
+        <div class="col-md-12 col-sm-12 text-center">
+          <ul class="share-buttons socials">
+            <li><a
+                href="https://chrome.google.com/webstore/detail/voicein-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko"
+                target="_blank"><i class="fa fa-chrome"></i></a></li>
+            <li><a href="https://www.facebook.com/DictanoteApp/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="mailto:support@dictanote.co"><i class="fa fa-envelope-o"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row copyright-row">
+        <div class="col-md-12 col-sm-12 text-center"><span class="copyright">© 2020 Dictanote</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/settings/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/settings/congratulations.js"></script>
+</body>
+
+</html>

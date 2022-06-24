@@ -1,0 +1,1 @@
+function onload(){chrome.storage.sync.get("pro",(e=>{e.pro&&(document.querySelector("#activate-box").style.display="none",document.querySelector("#successMsg").style.display="block")}))}onload();

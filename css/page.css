@@ -1,0 +1,358 @@
+div {
+  display: block;
+  border: none;
+  margin: none;
+  padding: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#voicein_voicebox_container {
+  position: fixed;
+  width: 50%;
+  top: 70px;
+  right: 25%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  transition: display 1s ease-in-out;
+  -moz-transition: display 1s ease-in-out;
+  -webkit-transition: display 1s ease-in-out;
+  pointer-events:none;
+  z-index: 2147483647;
+}
+
+#voicein_voicebox {
+  display: inline-block;
+  font-size: 20px!important;
+  line-height: 1.3em!important;
+  font-family: Arial;
+  text-align: center!important;
+  padding: 5px 20px!important;
+  min-height: 1.25em!important;
+  background-color: rgba(210,210,210,0.8)!important;
+  color: #333 !important;
+  border: none;
+  border-radius: 10px;
+  transition: display 1s ease-in-out;
+  -moz-transition: display 1s ease-in-out;
+  -webkit-transition: display 1s ease-in-out;
+  box-sizing: content-box;
+}
+
+#voicein_spacebox_container textarea {
+  background: white;
+}
+
+#voicein_voicebox:empty {
+  visibility:hidden;
+  opacity:0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+#voicein_voicebox_container:empty {
+  display: none;
+  transition: display 1s ease-in-out;
+  -moz-transition: display 1s ease-in-out;
+  -webkit-transition: display 1s ease-in-out;
+}
+
+#voicein_popup_container #voicein_popup>div {
+  margin-bottom: 5px;
+}
+
+#voicein_popup_container.voicein_tr {
+    top: 10px;
+    right: 20px;
+}
+
+#voicein_popup_container.voicein_tl {
+    top: 10px;
+    left: 20px;
+}
+
+#voicein_popup_container.voicein_br {
+    bottom: 10px;
+    right: 20px;
+}
+
+#voicein_popup_container.voicein_bl {
+    bottom: 10px;
+    left: 20px;
+}
+
+#voicein_popup_container.voicein_br #voicein_popup>div,
+#voicein_popup_container.voicein_tr #voicein_popup>div {
+  margin-left: auto;
+}
+
+#voicein_popup_container {
+    vertical-align: middle;
+    display: block;
+    position: fixed;
+    line-height: 23px;
+    background-color: transparent;
+    z-index: 2147483647;
+    margin: 0px auto;
+    padding: 0px;
+    border-width: initial;
+    border-color: initial;
+    border-image: initial;
+    font-family: Verdana, Arial;
+    font-size: 12px;
+    text-decoration: none;
+    box-sizing: content-box;
+}
+
+#voicein_popup_container .voicein_menu_option {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #bbb;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+#voicein_popup_container .voicein_menu_option a {
+  text-decoration: none!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#voicein_settings {
+  border-radius: 17px;
+  border: 1px solid rgba(0,0,0,0.2); 
+  height: 30px; 
+  width: fit-content;
+  max-width: 140px;
+  min-width: 100px; 
+  margin: 0;
+  background-color: black;
+  color: white;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+#voicein_lang {
+  display: inline-block; 
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  margin-left: 6px;
+  margin-right: 5px;
+}
+
+#voicein_popup_container #voicein_upgrade {
+  color: black; 
+  border-color: #F2A62C!important;
+  background-color: #ffc107!important;
+  border-radius: 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#voicein_popup_container #voicein_upgrade > a {
+  font-size: 13px;
+  color: #212529!important;
+}
+
+#voicein_help,
+#voicein_error {
+  width: 245px;
+  padding: 10px;
+  display: none;
+}
+
+#voicein_help {
+  color: #333;
+  background: yellow;
+}
+
+#voicein_error {
+  color: #721c24;
+  background-color: #f8d7da;  
+}
+
+#voicein_help_message,
+#voicein_error_message {
+  padding: 0;
+  margin: 0;
+  line-height: 15px;
+  font-size: 12px;
+}
+
+#voicein_help_message a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#voicein_help_message a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* The Modal (background) */
+#voicein_modal .voicein_modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2147483647; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#voicein_modal .voicein_modal_content {
+  display: block;
+  background-color: #fefefe;
+  margin: 2rem auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px; /* Could be more or less, depending on screen size */
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  line-height: 1.1em;
+}
+
+#voicein_modal .voicein_modal_content p {
+  margin: 0;
+}
+
+/* The Close Button */
+#voicein_modal .voicein_modal_close {
+  color: #aaa;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#voicein_modal .voicein_modal_close:hover,
+#voicein_modal .voicein_modal_close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.voicein_ks {
+  padding: 5px 15px;
+  background: #828282;
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.voicein_ks_s {
+  display: inline-block;
+  width: max-content;
+}
+
+.voicein_modal_content h1 {
+  color: #333;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.voicein_modal_content small {
+  font-size: 13px; padding-bottom: 10px; display: block;
+}
+
+.voicein_modal_section {
+  margin-bottom: 20px;
+}
+
+.voicein_modal_section h4 {
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.voicein_modal_section select {
+  width: max-content;
+  border: 1px solid rgb(130, 130, 130);
+}
+
+.voicein_modal_section label {
+  font-size: 14px;
+  color: #828282;
+  display: inline;
+}
+
+.voicein_modal_section a {
+  color: #000000!important;
+  text-decoration: none;
+}
+
+.voicein_modal_section p {
+  font-size: 12px;
+  color: #828282
+}
+
+#voicein_spacebox_container {
+  display: none; background: black; border: 1px solid black;
+}
+
+#voicein_spacebox_container #voicein_spacebox {
+  outline: none; 
+  margin: 0px!important;
+  height: 86px; width: 265px; display: block;
+  line-height: 16px;
+  font-family: Arial;
+  font-size: 14px;
+}
+
+input[type=checkbox] {
+  margin-right: 5px;
+  pointer-events: auto;
+  z-index:1000;
+  opacity: 1;
+  appearance: auto;
+}
+
+.voicein_close {
+  float: right;
+  display: inline-block;
+  margin: 0;
+  margin-top: -12px;
+  cursor: pointer;
+}
+
+#voicein_ls {
+  text-align: inherit;
+  width: fit-content;
+}
+
+#voicein_ls > button {
+  padding: 1px 6px;
+  margin-right: 3px;
+  border: 1px solid rgb(118, 118, 118);
+}
+
+.plus-only {
+  font-size: 12px;
+}
+
+.plus-only a {
+    color: #007bff!important;
+}
